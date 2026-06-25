@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>홍보자료 — 창의융합인재교육원</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Pretendard', sans-serif; font-weight: 500; background: #fff; color: #1a2340; }
+a { text-decoration: none; }
+nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+.nav-left { display: flex; align-items: center; gap: 12px; }
+.nav-logo-img { height: 28px; background: #fff; border-radius: 4px; padding: 3px 8px; display: flex; align-items: center; font-size: 11px; font-weight: 700; color: #0f1f4a; }
+.nav-title { color: #fff; font-size: 14px; font-weight: 700; }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { color: #cbd5e1; font-size: 13px; font-weight: 500; }
+.nav-links a:hover { color: #fff; }
+.nav-links a.active { color: #fff; border-bottom: 2px solid #60a5fa; padding-bottom: 2px; }
+.section { padding: 64px 24px; }
+.inner { max-width: 860px; margin: 0 auto; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; background: #eff6ff; color: #1d4ed8; }
+.sec-title { font-size: 26px; font-weight: 800; color: #0f1f4a; margin-bottom: 8px; line-height: 1.4; }
+.sec-lead { font-size: 14px; color: #64748b; margin-bottom: 24px; line-height: 1.8; }
+.media-tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+.tab-btn { padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; border: 2px solid #dbeafe; background: #fff; color: #64748b; cursor: pointer; font-family: 'Pretendard', sans-serif; transition: all 0.15s; }
+.tab-btn.active { background: #1a56db; color: #fff; border-color: #1a56db; }
+.tab-btn:hover:not(.active) { background: #eff6ff; color: #1a56db; }
+.tab-content { display: none; }
+.tab-content.show { display: block; }
+.tab-header { margin-bottom: 24px; }
+.tab-header h3 { font-size: 20px; font-weight: 800; color: #0f1f4a; margin-bottom: 6px; }
+.tab-header p { font-size: 14px; color: #64748b; line-height: 1.8; }
+.media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.media-card { background: #f8faff; border: 1.5px solid #dbeafe; border-radius: 14px; overflow: hidden; }
+.media-thumb { height: 100px; background: #dbeafe; display: flex; align-items: center; justify-content: center; font-size: 36px; }
+.media-thumb.t3 { background: #fef3c7; }
+.media-info { padding: 12px; }
+.media-info h3 { font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px; }
+.media-info p { font-size: 12px; color: #94a3b8; }
+
+/* 마스터 탭 — 남색 배경 */
+.master-section { background: #0f1f4a; border-radius: 16px; padding: 48px 32px; }
+.master-badge { display: inline-block; background: #1d4ed8; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.06em; }
+.master-section h2 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+.master-section h2 span { color: #60a5fa; }
+.master-section > p { font-size: 14px; color: #94a3b8; line-height: 1.9; margin-bottom: 36px; }
+.master-items { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+.master-item { display: flex; flex-direction: column; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 32px; min-width: 160px; }
+.master-item .icon { font-size: 48px; }
+.master-item span { font-size: 14px; font-weight: 700; color: #e2e8f0; }
+.master-link-btn { display: inline-block; padding: 13px 36px; background: #1a56db; color: #fff; border-radius: 10px; font-size: 15px; font-weight: 700; box-shadow: 4px 4px 0px #0f3a9e; text-align: center; }
+.master-link-btn:hover { opacity: 0.9; }
+.master-cta { text-align: center; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo-img">CTCE 로고 자리</div>
+    <a href="index.html"><span class="nav-title">창의융합인재교육원 홍보안내</span></a>
+  </div>
+  <div class="nav-links">
+    <a href="why.html">왜 CDT인가?</a>
+    <a href="games.html">미니게임</a>
+    <a href="media.html" class="active">홍보자료</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="inner">
+    <span class="tag">홍보자료</span>
+    <div class="media-tabs">
+      <button class="tab-btn active" onclick="showTab('video', this)">▶ 실행 영상</button>
+      <button class="tab-btn" onclick="showTab('master', this)">🏆 마스터 자격증</button>
+      <button class="tab-btn" onclick="showTab('poster', this)">📋 포스터·홍보물</button>
+    </div>
+
+    <!-- 실행 영상 탭 -->
+    <div class="tab-content show" id="tab-video">
+      <div class="tab-header">
+        <h3>블록 몇 개로 이런 게 만들어져요</h3>
+        <p>어떤 블록들이 이 움직임을 만들었을까요?</p>
+      </div>
+      <div class="media-grid">
+        <div class="media-card"><div class="media-thumb">▶️</div><div class="media-info"><h3>(임시) 엔트리 3급 실행 영상</h3><p>업로드 예정</p></div></div>
+        <div class="media-card"><div class="media-thumb">▶️</div><div class="media-info"><h3>(임시) 스크래치 3급 실행 영상</h3><p>업로드 예정</p></div></div>
+        <div class="media-card"><div class="media-thumb">▶️</div><div class="media-info"><h3>(임시) 엔트리 2급 실행 영상</h3><p>업로드 예정</p></div></div>
+      </div>
+    </div>
+
+    <!-- 마스터 자격증 탭 -->
+    <div class="tab-content" id="tab-master">
+      <div class="master-section">
+        <span class="master-badge">CDT MASTER</span>
+        <h2>3급부터 1급까지,<br><span>도전을 멈추지 않은<br>사람에게 주어지는<br>완주의 증명</span></h2>
+        <p>엔트리 또는 스크래치 1·2·3급을<br>모두 합격하면 마스터 자격증이 발급돼요.</p>
+        <div class="master-items">
+          <div class="master-item"><span class="icon">💳</span><span>플라스틱 카드</span></div>
+          <div class="master-item"><span class="icon">📜</span><span>마스터 인증서</span></div>
+          <div class="master-item"><span class="icon">🗂️</span><span>상장 케이스</span></div>
+        </div>
+        <div class="master-cta">
+          <a href="https://ctce.or.kr/customer/board.html?boardMode=view&bidx=185&bcode=1&page=1&sPageRow=10&sCategory=&sopt=&sval=" target="_blank" class="master-link-btn">상세 안내 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 포스터·홍보물 탭 -->
+    <div class="tab-content" id="tab-poster">
+      <div class="tab-header">
+        <h3>홍보 자료 모음</h3>
+        <p>CDT 관련 포스터와 홍보 영상을 확인해보세요</p>
+      </div>
+      <div class="media-grid">
+        <div class="media-card"><div class="media-thumb t3">🖼️</div><div class="media-info"><h3>(임시) 홍보 포스터</h3><p>업로드 예정</p></div></div>
+        <div class="media-card"><div class="media-thumb t3">🖼️</div><div class="media-info"><h3>(임시) 홍보 영상</h3><p>업로드 예정</p></div></div>
+        <div class="media-card"><div class="media-thumb t3">🖼️</div><div class="media-info"><h3>(임시) SNS 카드뉴스</h3><p>업로드 예정</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(function(el){ el.classList.remove('show'); });
+  document.querySelectorAll('.tab-btn').forEach(function(el){ el.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('show');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

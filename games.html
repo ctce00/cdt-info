@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미니게임 — 창의융합인재교육원</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Pretendard', sans-serif; font-weight: 500; background: #fff; color: #1a2340; }
+a { text-decoration: none; }
+nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+.nav-left { display: flex; align-items: center; gap: 12px; }
+.nav-logo-img { height: 28px; background: #fff; border-radius: 4px; padding: 3px 8px; display: flex; align-items: center; font-size: 11px; font-weight: 700; color: #0f1f4a; }
+.nav-title { color: #fff; font-size: 14px; font-weight: 700; }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { color: #cbd5e1; font-size: 13px; font-weight: 500; }
+.nav-links a:hover { color: #fff; }
+.nav-links a.active { color: #fff; border-bottom: 2px solid #60a5fa; padding-bottom: 2px; }
+.section { padding: 64px 24px; }
+.inner { max-width: 860px; margin: 0 auto; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; background: #eff6ff; color: #1d4ed8; }
+.sec-title { font-size: 26px; font-weight: 800; color: #0f1f4a; margin-bottom: 8px; line-height: 1.4; }
+.sec-lead { font-size: 14px; color: #64748b; margin-bottom: 32px; line-height: 1.8; }
+.games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.game-card { background: #fff; border-radius: 18px; overflow: hidden; border: 2px solid #dbeafe; transition: transform 0.2s; }
+.game-card:hover { transform: translateY(-3px); }
+.game-thumb { height: 110px; display: flex; align-items: center; justify-content: center; font-size: 44px; }
+.g1 { background: #dbeafe; }
+.g2 { background: #e0e7ff; }
+.g3 { background: #d1fae5; }
+.game-info { padding: 16px; }
+.game-info h3 { font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 8px; }
+.game-info p { font-size: 12px; color: #64748b; margin-bottom: 12px; line-height: 1.9; }
+.game-btn { display: block; text-align: center; padding: 9px; background: #1a56db; color: #fff; border-radius: 8px; font-size: 12px; font-weight: 700; border: none; cursor: pointer; width: 100%; font-family: 'Pretendard', sans-serif; box-shadow: 3px 3px 0px #0f3a9e; transition: transform 0.1s, box-shadow 0.1s; }
+.game-btn:hover { transform: translate(1px,1px); box-shadow: 2px 2px 0px #0f3a9e; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo-img">CTCE 로고 자리</div>
+    <a href="index.html"><span class="nav-title">창의융합인재교육원 홍보안내</span></a>
+  </div>
+  <div class="nav-links">
+    <a href="why.html">왜 CDT인가?</a>
+    <a href="games.html" class="active">미니게임</a>
+    <a href="media.html">홍보자료</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="inner">
+    <span class="tag">미니게임 체험</span>
+    <h2 class="sec-title">직접 해보면 알 수 있어요</h2>
+    <p class="sec-lead">실제 시험과 비슷한 미니게임을 통해 블록코딩이 어떤 건지 체험해보세요</p>
+    <div class="games-grid">
+      <div class="game-card">
+        <div class="game-thumb g1">🗺️</div>
+        <div class="game-info">
+          <h3>게임 1 — 명령어 미로 탈출</h3>
+          <p>방향 블록을 조합해서<br>캐릭터를 골인까지 보내보세요</p>
+          <button class="game-btn">게임 시작하기</button>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb g2">🧩</div>
+        <div class="game-info">
+          <h3>게임 2 — 블록 순서 맞추기</h3>
+          <p>블록을 올바른 순서로 쌓으면<br>캐릭터가 직접 움직여요</p>
+          <button class="game-btn">게임 시작하기</button>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb g3">🔍</div>
+        <div class="game-info">
+          <h3>게임 3 — 틀린 블록 찾기</h3>
+          <p>코드 블록 중 잘못된 것 하나를<br>찾아서 고쳐보세요</p>
+          <button class="game-btn">게임 시작하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
