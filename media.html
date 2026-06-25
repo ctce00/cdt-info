@@ -64,6 +64,14 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
 .master-link-btn:hover { opacity: 0.9; }
 
 /* 마스터 상장 카드 */
+@keyframes certFloat {
+  0%,100% { transform: translateY(0px); box-shadow: 0 0 0 5px rgba(200,168,75,0.2), 0 16px 40px rgba(0,0,0,0.4); }
+  50%      { transform: translateY(-14px); box-shadow: 0 0 0 5px rgba(200,168,75,0.2), 0 28px 50px rgba(0,0,0,0.3); }
+}
+@keyframes certFadeIn {
+  0%   { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
 .master-cert-card {
   width: 220px; height: 280px;
   background: linear-gradient(145deg, #fdf8ee, #f5ead8);
@@ -72,6 +80,7 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
   box-shadow: 0 0 0 5px rgba(200,168,75,0.2), 0 16px 40px rgba(0,0,0,0.4);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   position: relative; flex-shrink: 0;
+  animation: certFadeIn 0.6s ease both, certFloat 3.6s ease-in-out 0.6s infinite;
 }
 .master-cert-card::before {
   content: '';
@@ -176,6 +185,13 @@ function showTab(name, btn) {
   var masterSection = document.getElementById('master-section');
   if (name === 'master') {
     masterSection.style.display = 'block';
+    // 애니메이션 리셋 — 탭 열 때마다 처음부터
+    var card = document.querySelector('.master-cert-card');
+    if (card) {
+      card.style.animation = 'none';
+      card.offsetHeight; // reflow
+      card.style.animation = 'certFadeIn 0.6s ease both, certFloat 3.6s ease-in-out 0.6s infinite';
+    }
   } else {
     masterSection.style.display = 'none';
   }
