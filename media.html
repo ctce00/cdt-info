@@ -19,9 +19,8 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
 .nav-links a.active { color: #fff; border-bottom: 2px solid #60a5fa; padding-bottom: 2px; }
 .section { padding: 64px 24px; }
 .inner { max-width: 860px; margin: 0 auto; }
-.tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; background: #eff6ff; color: #1d4ed8; }
+.tag { display: block; width: fit-content; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; margin-left: -12px; background: #eff6ff; color: #1d4ed8; }
 .sec-title { font-size: 26px; font-weight: 800; color: #0f1f4a; margin-bottom: 8px; line-height: 1.4; }
-.sec-lead { font-size: 14px; color: #64748b; margin-bottom: 24px; line-height: 1.8; }
 .media-tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
 .tab-btn { padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; border: 2px solid #dbeafe; background: #fff; color: #64748b; cursor: pointer; font-family: 'Pretendard', sans-serif; transition: all 0.15s; }
 .tab-btn.active { background: #1a56db; color: #fff; border-color: #1a56db; }
@@ -39,19 +38,20 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
 .media-info h3 { font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px; }
 .media-info p { font-size: 12px; color: #94a3b8; }
 
-/* 마스터 탭 — 남색 배경 */
-.master-section { background: #0f1f4a; border-radius: 16px; padding: 48px 32px; }
-.master-badge { display: inline-block; background: #1d4ed8; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.06em; }
-.master-section h2 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.4; }
-.master-section h2 span { color: #60a5fa; }
-.master-section > p { font-size: 14px; color: #94a3b8; line-height: 1.9; margin-bottom: 36px; }
-.master-items { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
-.master-item { display: flex; flex-direction: column; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 32px; min-width: 160px; }
-.master-item .icon { font-size: 48px; }
+/* 마스터 탭 — 전체 화면 꽉 채우는 남색 */
+.master-full { background: #1a2f5e; width: 100vw; margin-left: calc(-50vw + 50%); padding: 64px 24px; }
+.master-inner { max-width: 860px; margin: 0 auto; }
+.master-badge { display: inline-block; background: #2563eb; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.06em; }
+.master-full h2 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+.master-full h2 span { color: #60a5fa; }
+.master-full > .master-inner > p { font-size: 14px; color: #94a3b8; line-height: 1.9; margin-bottom: 40px; }
+.master-items { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.master-item { display: flex; flex-direction: column; align-items: center; gap: 12px; background: rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 40px; min-width: 160px; }
+.master-item .icon { font-size: 52px; }
 .master-item span { font-size: 14px; font-weight: 700; color: #e2e8f0; }
-.master-link-btn { display: inline-block; padding: 13px 36px; background: #1a56db; color: #fff; border-radius: 10px; font-size: 15px; font-weight: 700; box-shadow: 4px 4px 0px #0f3a9e; text-align: center; }
-.master-link-btn:hover { opacity: 0.9; }
 .master-cta { text-align: center; }
+.master-link-btn { display: inline-block; padding: 14px 40px; background: #2563eb; color: #fff; border-radius: 10px; font-size: 15px; font-weight: 700; box-shadow: 4px 4px 0px #1e40af; }
+.master-link-btn:hover { opacity: 0.9; }
 </style>
 </head>
 <body>
@@ -77,7 +77,6 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
       <button class="tab-btn" onclick="showTab('poster', this)">📋 포스터·홍보물</button>
     </div>
 
-    <!-- 실행 영상 탭 -->
     <div class="tab-content show" id="tab-video">
       <div class="tab-header">
         <h3>블록 몇 개로 이런 게 만들어져요</h3>
@@ -90,24 +89,9 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
       </div>
     </div>
 
-    <!-- 마스터 자격증 탭 -->
     <div class="tab-content" id="tab-master">
-      <div class="master-section">
-        <span class="master-badge">CDT MASTER</span>
-        <h2>3급부터 1급까지,<br><span>도전을 멈추지 않은<br>사람에게 주어지는<br>완주의 증명</span></h2>
-        <p>엔트리 또는 스크래치 1·2·3급을<br>모두 합격하면 마스터 자격증이 발급돼요.</p>
-        <div class="master-items">
-          <div class="master-item"><span class="icon">💳</span><span>플라스틱 카드</span></div>
-          <div class="master-item"><span class="icon">📜</span><span>마스터 인증서</span></div>
-          <div class="master-item"><span class="icon">🗂️</span><span>상장 케이스</span></div>
-        </div>
-        <div class="master-cta">
-          <a href="https://ctce.or.kr/customer/board.html?boardMode=view&bidx=185&bcode=1&page=1&sPageRow=10&sCategory=&sopt=&sval=" target="_blank" class="master-link-btn">상세 안내 →</a>
-        </div>
-      </div>
     </div>
 
-    <!-- 포스터·홍보물 탭 -->
     <div class="tab-content" id="tab-poster">
       <div class="tab-header">
         <h3>홍보 자료 모음</h3>
@@ -122,12 +106,35 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
   </div>
 </section>
 
+<!-- 마스터 탭 — 전체 화면 꽉 채움 -->
+<div class="master-full" id="master-section" style="display:none;">
+  <div class="master-inner">
+    <span class="master-badge">CDT MASTER</span>
+    <h2>3급부터 1급까지,<br><span>도전을 멈추지 않은<br>사람에게 주어지는<br>완주의 증명</span></h2>
+    <p>엔트리 또는 스크래치 1·2·3급을<br>모두 합격하면 마스터 자격증이 발급돼요.</p>
+    <div class="master-items">
+      <div class="master-item"><span class="icon">💳</span><span>플라스틱 카드</span></div>
+      <div class="master-item"><span class="icon">📜</span><span>마스터 인증서</span></div>
+      <div class="master-item"><span class="icon">🗂️</span><span>상장 케이스</span></div>
+    </div>
+    <div class="master-cta">
+      <a href="https://ctce.or.kr/customer/board.html?boardMode=view&bidx=185&bcode=1&page=1&sPageRow=10&sCategory=&sopt=&sval=" target="_blank" class="master-link-btn">상세 안내 →</a>
+    </div>
+  </div>
+</div>
+
 <script>
 function showTab(name, btn) {
   document.querySelectorAll('.tab-content').forEach(function(el){ el.classList.remove('show'); });
   document.querySelectorAll('.tab-btn').forEach(function(el){ el.classList.remove('active'); });
   document.getElementById('tab-' + name).classList.add('show');
   btn.classList.add('active');
+  var masterSection = document.getElementById('master-section');
+  if (name === 'master') {
+    masterSection.style.display = 'block';
+  } else {
+    masterSection.style.display = 'none';
+  }
 }
 </script>
 </body>
