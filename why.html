@@ -39,6 +39,17 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
 .why-card.c1 .bubble { color: #BE185D; border: 1.5px solid #FFD6DF; }
 .why-card.c2 .bubble { color: #3730A3; border: 1.5px solid #C7D7FF; }
 .why-card.c3 .bubble { color: #166534; border: 1.5px solid #BBF7D0; }
+
+@media (max-width: 640px) {
+  nav { padding: 0 16px; }
+  .nav-title { font-size: 13px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 12px; }
+  .section { padding: 40px 16px; }
+  .sec-title { font-size: 22px; }
+  .why-cards { grid-template-columns: 1fr; gap: 14px; }
+  .why-card { padding: 20px 16px; }
+}
 </style>
 </head>
 <body>
