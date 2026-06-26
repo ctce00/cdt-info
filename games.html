@@ -164,12 +164,15 @@ canvas { display:block;width:100%; }
 <div class="page-header">
   <span class="tag">미니게임 체험</span>
   <h1>직접 해보면 알 수 있어요</h1>
-  <p>처음 하는 사람도 쉽게 풀 수 있어요! 게임을 하면서 블록코딩이 어떤 건지 느껴보세요 😊</p>
+  <p>처음 하는 사람도 쉽게 풀 수 있어요! 게임을 하면서 블록코딩이 어떤 건지 느껴보세요 😊<br>
+  게임 4, 5는 실제 CDT 시험 답안 파일을 기반으로 만든 재미있는 미니게임이에요!</p>
 </div>
 <div class="game-tabs">
   <button class="game-tab-btn active" onclick="showGame('g1',this)">🗺️ 게임 1 — 미로 탈출</button>
   <button class="game-tab-btn" onclick="showGame('g2',this)">🔍 게임 2 — 틀린 블록</button>
   <button class="game-tab-btn" onclick="showGame('g3',this)">🧩 게임 3 — 블록 체험</button>
+  <button class="game-tab-btn" onclick="showGame('g4',this)">🌊 게임 4 — 바다 탈출</button>
+  <button class="game-tab-btn" onclick="showGame('g5',this)">🐱 게임 5 — 고양이 달리기</button>
 </div>
 
 <!-- 게임 1 -->
@@ -791,6 +794,33 @@ function g1ShowScroll(){ showScroll(g1CurV+1,g1CurV>=4,function(){g1StartV(g1Cur
 function g2ShowScroll(){ showScroll(g2CurV+1,g2CurV>=4,function(){g2StartV(g2CurV+1);},function(){g2Back();}); }
 function g3ShowScroll(){ showScroll(g3CurV+1,g3CurV>=4,function(){g3StartV(g3CurV+1);},function(){g3Back();}); }
 </script>
+
+<!-- 게임 4 — 바다 탈출 -->
+<div class="game-content" id="g4">
+  <div style="margin-bottom:12px;">
+    <h2 style="font-size:18px;font-weight:800;color:#0f1f4a;margin-bottom:6px;">🌊 게임 4 — 바다 탈출</h2>
+    <p style="font-size:13px;color:#64748b;line-height:1.8;">
+      엔트리 답안 파일을 기반으로 만든 재미있는 미니게임이에요! 한번 플레이해보세요 🎮
+    </p>
+  </div>
+  <div style="width:100%;border-radius:12px;overflow:hidden;border:2px solid #dbeafe;">
+    <iframe src="바다탈출_웹실행.html" width="100%" height="560px" frameborder="0" allowfullscreen style="display:block;"></iframe>
+  </div>
+</div>
+
+<!-- 게임 5 — 고양이 달리기 -->
+<div class="game-content" id="g5">
+  <div style="margin-bottom:12px;">
+    <h2 style="font-size:18px;font-weight:800;color:#0f1f4a;margin-bottom:6px;">🐱 게임 5 — 고양이 달리기</h2>
+    <p style="font-size:13px;color:#64748b;line-height:1.8;">
+      스크래치 답안 파일을 기반으로 만든 재미있는 미니게임이에요! 한번 플레이해보세요 🐱
+    </p>
+  </div>
+  <div style="width:100%;border-radius:12px;overflow:hidden;border:2px solid #dbeafe;">
+    <iframe src="고양이달리기_웹실행.html" width="100%" height="560px" frameborder="0" allowfullscreen style="display:block;"></iframe>
+  </div>
+</div>
+
 <!-- 두루마리 팝업 -->
 <div class="scroll-overlay" id="scrollOverlay">
   <div class="scroll-wrap">
