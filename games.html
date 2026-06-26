@@ -549,7 +549,7 @@ var g3Missions=[
   { title:'⭐ 별 그리기',
     desc:'<b>5번 반복</b>하면서 <b>50만큼 이동</b> → <b>144도 회전</b>을 해보세요.',
     check:function(ids){return ids.length===3&&ids[0]==='repeat5'&&ids[1]==='move50'&&ids[2]==='turn144';},
-    startAngle:-90,startX:100,startY:170,icecream:false,celebrate:true,clamp:false,
+    startAngle:18,startX:100,startY:170,icecream:false,celebrate:true,clamp:false,
     success:'🥇 금메달 획득! 별 그리기 완료!' },
   { title:'💬 안녕 말하고 크기 키우기',
     desc:'<b>안녕! 말하기</b> → <b>크기 키우기</b> → <b>크기 키우기</b> → <b>크기 키우기</b> 순서로 쌓아보세요!',
@@ -564,7 +564,7 @@ var g3Missions=[
   { title:'🟦 사각형 그리기',
     desc:'<b>4번 반복</b> → <b>50만큼 이동</b> → <b>90도 회전</b> 순서로 쌓아보세요.',
     check:function(ids){return ids.length===3&&ids[0]==='repeat4'&&ids[1]==='move50'&&ids[2]==='turn90';},
-    startAngle:-90,startX:80,startY:150,icecream:false,celebrate:false,clamp:false,
+    startAngle:0,startX:30,startY:120,icecream:false,celebrate:false,clamp:false,
     success:'🟦 사각형 완성!' },
   { title:'🍦 아이스크림 먹기',
     desc:'<b>3번 반복</b> → <b>50만큼 이동</b> 순서로 쌓아서 🍦 아이스크림을 먹어보세요!',
@@ -672,10 +672,11 @@ function g3Expand(blocks){
     var b=blocks[i];
     var repeatN=b.id==='repeat3'?3:b.id==='repeat4'?4:b.id==='repeat5'?5:0;
     if(repeatN>0&&i+1<blocks.length){
-      // 다음 블록을 N번 반복
-      var nextBlock=blocks[i+1];
-      for(var r=0;r<repeatN;r++) result.push(nextBlock);
-      i++; // 다음 블록 건너뜀
+      var nb=blocks[i+1];
+      for(var r=0;r<repeatN;r++){
+        result.push({id:nb.id,label:nb.label,bg:nb.bg,color:nb.color,repeatIdx:r+1,repeatTotal:repeatN});
+      }
+      i++;
     } else {
       result.push(b);
     }
