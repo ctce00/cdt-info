@@ -546,27 +546,27 @@ var g3Missions=[
   { title:'⭐ 별 그리기',
     desc:'<b>5번 반복</b>하면서 <b>50만큼 이동</b> → <b>144도 회전</b>을 해보세요.',
     check:function(ids){return ids.length===3&&ids[0]==='repeat5'&&ids[1]==='move50'&&ids[2]==='turn144';},
-    startAngle:-90,startX:100,startY:180,icecream:false,celebrate:true,
+    startAngle:-90,startX:100,startY:170,icecream:false,celebrate:true,clamp:false,
     success:'🥇 금메달 획득! 별 그리기 완료!' },
   { title:'💬 안녕 말하고 크기 키우기',
     desc:'<b>안녕! 말하기</b> → <b>크기 키우기</b> → <b>크기 키우기</b> → <b>크기 키우기</b> 순서로 쌓아보세요!',
     check:function(ids){return ids.length===4&&ids[0]==='sayHi'&&ids[1]==='bigger'&&ids[2]==='bigger'&&ids[3]==='bigger';},
-    startAngle:-90,startX:100,startY:200,icecream:false,celebrate:false,
+    startAngle:-90,startX:100,startY:200,icecream:false,celebrate:false,clamp:false,
     success:'🎉 완성! 캐릭터가 커졌어요!' },
   { title:'🏃 3번 반복해서 이동하기',
     desc:'<b>3번 반복</b> → <b>50만큼 이동</b> 순서로 쌓아보세요! 캐릭터가 오른쪽으로 세 번 이동해요.',
     check:function(ids){return ids.length===2&&ids[0]==='repeat3'&&ids[1]==='move50';},
-    startAngle:0,startX:16,startY:200,icecream:false,celebrate:false,
+    startAngle:0,startX:16,startY:200,icecream:false,celebrate:false,clamp:true,
     success:'🎉 완성! 3번 반복해서 이동했어요!' },
   { title:'🟦 사각형 그리기',
     desc:'<b>4번 반복</b> → <b>50만큼 이동</b> → <b>90도 회전</b> 순서로 쌓아보세요.',
     check:function(ids){return ids.length===3&&ids[0]==='repeat4'&&ids[1]==='move50'&&ids[2]==='turn90';},
-    startAngle:-90,startX:80,startY:160,icecream:false,celebrate:false,
+    startAngle:-90,startX:80,startY:150,icecream:false,celebrate:false,clamp:false,
     success:'🟦 사각형 완성!' },
   { title:'🍦 아이스크림 먹기',
     desc:'<b>3번 반복</b> → <b>50만큼 이동</b> 순서로 쌓아서 🍦 아이스크림을 먹어보세요!',
     check:function(ids,char){return ids.length===2&&ids[0]==='repeat3'&&ids[1]==='move50'&&char.x>=140;},
-    startAngle:0,startX:20,startY:200,icecream:true,celebrate:false,
+    startAngle:0,startX:16,startY:200,icecream:true,celebrate:false,clamp:true,
     success:'🍦 냠냠! 아이스크림 먹기 성공!' }
 ];
 
@@ -724,13 +724,14 @@ async function g3ExecOne(b){
   if(g3StopFlag)return;
   var dist,steps,rad;
   if(b.id==='move100'||b.id==='move50'||b.id==='move10'){
-    if(b.repeatIdx){g3C.bubble=b.repeatIdx+'번째!';g3D();await sleep(400);g3C.bubble='';}
+    if(b.repeatIdx){g3C.bubble=b.repeatIdx+'번째!';g3D();await sleep(500);g3C.bubble='';g3D();}
     dist=b.id==='move100'?100:b.id==='move50'?50:10;steps=10;
+    var useClamp=g3Missions[g3CurV].clamp;
     for(var s=0;s<steps;s++){
       if(g3StopFlag)return;
       rad=g3C.angle*Math.PI/180;
       g3C.x+=Math.cos(rad)*(dist/steps);g3C.y+=Math.sin(rad)*(dist/steps);
-      g3C.x=Math.max(10,Math.min(g3W-10,g3C.x));g3C.y=Math.max(10,Math.min(g3H-30,g3C.y));
+      if(useClamp){g3C.x=Math.max(10,Math.min(g3W-10,g3C.x));g3C.y=Math.max(10,Math.min(g3H-30,g3C.y));}
       if(g3C.pen&&g3Tr.length>0)g3Tr[g3Tr.length-1].push({x:g3C.x,y:g3C.y});
       g3D();await sleep(20);
     }
