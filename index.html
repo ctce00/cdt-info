@@ -25,6 +25,7 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
 @keyframes float6 { 0%,100%{transform:translateY(0px) rotate(0deg);}50%{transform:translateY(-10px) rotate(12deg);} }
 @keyframes twinkle { 0%,100%{opacity:0.6;transform:scale(1);}50%{opacity:1;transform:scale(1.25);} }
 @keyframes zigzag { 0%{transform:translateY(0) translateX(0) rotate(0deg);}25%{transform:translateY(-14px) translateX(8px) rotate(6deg);}50%{transform:translateY(-20px) translateX(0) rotate(0deg);}75%{transform:translateY(-14px) translateX(-8px) rotate(-6deg);}100%{transform:translateY(0) translateX(0) rotate(0deg);} }
+@keyframes floatMonitor { 0%,100%{transform:translateY(0px);}50%{transform:translateY(-12px);} }
 
 .hero { background: linear-gradient(160deg, #dbeafe 0%, #eef4ff 50%, #f0f5ff 100%); padding: 72px 24px 88px; position: relative; overflow: hidden; text-align: center; min-height: 600px; }
 .el { position: absolute; pointer-events: none; user-select: none; }
@@ -126,6 +127,30 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
   </div>
   <!-- 오른쪽 하단 — 보라 구슬 -->
   <div class="el orb orb-purple hide-mobile" style="width:50px;height:50px; top:72%; right:5%; animation: float4 3.9s ease-in-out infinite 1.2s;"></div>
+  <!-- 오른쪽 하단 — 모니터 -->
+  <div class="el hide-mobile" style="top:68%; right:3%; animation: floatMonitor 4s ease-in-out infinite 0.5s;">
+    <svg width="88" height="80" viewBox="0 0 110 100" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(4px 8px 16px rgba(29,78,216,0.3));">
+      <defs>
+        <linearGradient id="mg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e0e7ff"/><stop offset="100%" stop-color="#c7d2fe"/></linearGradient>
+        <linearGradient id="ms" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#818cf8"/></linearGradient>
+        <linearGradient id="mscreen" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1e1e3a"/><stop offset="100%" stop-color="#0f1f4a"/></linearGradient>
+      </defs>
+      <rect x="4" y="4" width="102" height="72" rx="8" fill="url(#mg)" stroke="#a5b4fc" stroke-width="1.5"/>
+      <rect x="10" y="10" width="90" height="60" rx="5" fill="url(#mscreen)"/>
+      <ellipse cx="30" cy="17" rx="18" ry="4" fill="rgba(255,255,255,0.08)" transform="rotate(-10 30 17)"/>
+      <rect x="16" y="17" width="48" height="10" rx="3" fill="#FFD500"/>
+      <text x="20" y="25.5" font-size="6" fill="#3a2800" font-family="sans-serif" font-weight="bold">🚩 깃발 클릭했을 때</text>
+      <rect x="20" y="30" width="42" height="10" rx="3" fill="#FF8C00"/>
+      <text x="24" y="38.5" font-size="6" fill="#fff" font-family="sans-serif" font-weight="bold">🔁 5번 반복하기</text>
+      <rect x="26" y="43" width="38" height="10" rx="3" fill="#4C97FF"/>
+      <text x="30" y="51.5" font-size="6" fill="#fff" font-family="sans-serif" font-weight="bold">➡ 100만큼 이동</text>
+      <rect x="26" y="56" width="38" height="10" rx="3" fill="#4C97FF"/>
+      <text x="30" y="64.5" font-size="6" fill="#fff" font-family="sans-serif" font-weight="bold">↻ 144도 회전</text>
+      <rect x="48" y="76" width="14" height="8" rx="2" fill="url(#ms)"/>
+      <rect x="36" y="83" width="38" height="5" rx="3" fill="url(#ms)"/>
+    </svg>
+  </div>
+
   <!-- 반짝이 -->
   <div class="el spark hide-mobile" style="top:22%; left:20%; font-size:13px; animation: twinkle 2.1s ease-in-out infinite 0.4s;">✨</div>
   <div class="el spark hide-mobile" style="top:18%; right:20%; font-size:11px; animation: twinkle 2.7s ease-in-out infinite 1s;">✨</div>
@@ -136,7 +161,7 @@ nav { background: #0f1f4a; padding: 0 24px; display: flex; align-items: center; 
     <h1 class="hero-title">AI 시대,<br><span class="hl">코딩 사고력</span>이<br>경쟁력입니다</h1>
     <div class="hero-sub">✏️ 엔트리 · 스크래치 기반 블록코딩</div>
     <p class="hero-desc">우리 아이의 논리적 사고력을<br>자격검정으로 확인해보세요</p>
-    <button class="btn-main" onclick="openModal()">🎮 미니게임 체험하기</button>
+    <a href="games.html"><button class="btn-main">🎮 미니게임 체험하기</button></a>
     <div class="badges">
       <div class="badge">🧠 논리적 사고력</div>
       <div class="badge">🏆 자격증 취득</div>
